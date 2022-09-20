@@ -57,7 +57,6 @@ plot_series <- function(municipality){
 
 
 # Data
-sergipe <- shapefile("map/mapa_se.shp")
 load("data/ranking.RData")
 load("data/ideb_brasil.RData")
 load("data/ideb_estados.RData")
@@ -73,25 +72,12 @@ RANKING$NO_MUNICIPIO[RANKING$NO_MUNICIPIO == "Amparo de São Francisco"] <- "Amp
 intro_text <- 'data/intro.txt'
 
 shinyServer(function(input, output, session) {
-  output$ser_map <- renderLeaflet(plot_spatial_dist(sergipe, RANKING))
-  
   output$intro_text <- renderText(readChar(intro_text, file.info(intro_text)$size))
   
   observeEvent(input$Sel_municipio, {
     output$p <- renderText(input$Sel_municipio)
     output$ideb <- renderText(RANKING$IDEB_VALIDO[RANKING$NO_MUNICIPIO == input$Sel_municipio])
     output$ideb_time <- renderPlotly(plot_series(input$Sel_municipio))
-  })
-  
-  
-  observeEvent(input$ser_map_shape_click, { # update the location selectInput on map clicks
-    output$p <- renderText(input$ser_map_shape_click$id)
-    output$ideb <- renderText(RANKING$IDEB_VALIDO[RANKING$NO_MUNICIPIO == input$ser_map_shape_click$id])
-    output$ideb_time <- renderPlotly(plot_series(input$ser_map_shape_click$id))
-    updateSelectInput(session, "Sel_municipio",
-                      selected = input$ser_map_shape_click$id)
-    
-    
   })
   
   output$downloadData <- downloadHandler(

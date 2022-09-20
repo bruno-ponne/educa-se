@@ -6,7 +6,6 @@ library(tidyverse)
 
 
 # Data
-sergipe <- shapefile("map/mapa_se.shp")
 load("data/ranking.RData")
 load("data/ideb_brasil.RData")
 load("data/ideb_estados.RData")
