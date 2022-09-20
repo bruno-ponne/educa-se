@@ -1,2 +1,0 @@
-
-write_intro <- function()

@@ -8,10 +8,6 @@ library(tigris)
 library(plotly)
 library(tidyverse)
 
-# Functions:
-source("functions/plot_spatial_dist.R")
-source("functions/plot_series.R")
-source("functions/plot_censo.R")
 
 # Data
 sergipe <- shapefile("map/mapa_se.shp")

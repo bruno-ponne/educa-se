@@ -8,10 +8,95 @@ library(tigris)
 library(plotly)
 library(tidyverse)
 
-# Functions:
-source("functions/plot_spatial_dist.R")
-source("functions/plot_series.R")
-source("functions/plot_censo.R")
+# Functions
+
+
+
+plot_spatial_dist <- function(map, ideb){
+  ser_merged<- geo_join(map, 
+                        ideb, 
+                        by_sp ="CD_GEOCODM", 
+                        by_df ="CO_MUNICIPIO")
+  
+  pal <- colorNumeric(palette = c("#F8C301","#0F3072"), 
+                      domain = ser_merged@data$IDEB_VALIDO)
+  
+  # Legendas ao passar o mouse
+  
+  mytext <- paste(
+    "Município: ", ser_merged@data$NO_MUNICIPIO,"<br/>", 
+    "Ideb: ", ser_merged@data$IDEB_VALIDO, 
+    sep="") %>%
+    lapply(htmltools::HTML)
+  
+  dist_map <- leaflet(data = ser_merged) %>%
+    addTiles %>%
+    addPolygons(fillColor = ~pal(IDEB_VALIDO), fillOpacity = 0.7,
+                color = "#525252", 
+                weight = 1,
+                layerId = ~NO_MUNICIPIO,
+                label = mytext,
+                labelOptions = labelOptions( 
+                  style = list("font-weight" = "normal", padding = "3px 8px"), 
+                  textsize = "12px", 
+                  direction = "auto")) %>%
+    addLegend("bottomright", 
+              pal = pal, 
+              values = ~IDEB_VALIDO,
+              title = "Ideb",
+              opacity = 0.7)
+  return(dist_map)
+}
+
+
+plot_series <- function(municipality){
+  
+  library(plotly)
+  
+  load("data/ideb_se.RData")
+  
+  data <- filter(ideb_se_long, NO_MUNICIPIO == municipality)
+  
+  colors <- c("#F8C301","#0F3072")
+  
+  t <- list(
+    family = "Lato")
+  
+  
+  title <- paste("Ideb - ", municipality, "- Ensino Fundamental")
+  
+  series_plot <- plot_ly(data, 
+                         x = ~ano, 
+                         y = ~ideb,
+                         color = ~NIVEL,
+                         colors = colors,
+                         type = 'scatter', 
+                         mode = 'lines', 
+                         line = list(width = 4))%>%
+    add_trace(x = ~ano, 
+              y = ~ideb,
+              color = ~NIVEL,
+              type = 'scatter', 
+              mode = 'lines', 
+              line = list(width = 4, dash = "dash"),
+              connectgaps = TRUE,
+              showlegend = FALSE) %>% 
+    layout(yaxis = list(title = "Ideb"), 
+           xaxis = list(title = ""),
+           legend = list(orientation = "h",
+                         xanchor = "center",
+                         x = 0.5),
+           title = list(text=title),
+           plot_bgcolor = "white",
+           paper_bgcolor = "white",
+           font = t) %>% 
+    config(modeBarButtons = list(list("toImage")), 
+           displaylogo = FALSE, 
+           toImageButtonOptions = list(filename = "plotOutput.png"))
+  return(series_plot)
+}
+
+
 
 # Data
 sergipe <- shapefile("map/mapa_se.shp")
