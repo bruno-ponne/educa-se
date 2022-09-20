@@ -1,10 +1,6 @@
 # Libraries:
 library(shiny)
-library(leaflet)
-library(raster)
 library(readr)
-library(sp)
-library(tigris)
 library(plotly)
 library(tidyverse)
 
