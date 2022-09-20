@@ -2,7 +2,7 @@
 #
 # Example R code to install packages if not already installed
 #
-install.packages("terra")
+install.packages('terra', repos='https://rspatial.r-universe.dev')
 
 my_packages = c("leaflet", "raster", "readr", "sp", "tigris", "plotly", "tidyverse", "shiny")
 
