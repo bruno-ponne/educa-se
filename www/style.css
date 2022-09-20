@@ -1,0 +1,256 @@
+*{
+  color: #0F3072;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  margin:0;
+  padding:0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48;
+  font-size: 40px;
+}
+
+.logo{
+  display: flex;
+  align-items: start;
+  font-size: 40px;
+  margin-top: 3%;
+}
+
+.title{
+  display: flex;
+  font-size: 40px;
+  font-weight: 900;
+  margin-top:2%;
+  margin-left: 1%;
+}
+
+.container{
+  margin:0;
+  padding:0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.header{
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  position: relative;
+  z-index: 10;
+  color: #0F3072;
+  padding-bottom: 2%;
+}
+
+.header-case{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.subtitle{
+  font-size: 18px;
+}
+
+.intro{
+  display: flex;
+  background-color: #F9FAFB;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presentation{
+  margin-top: 3%;
+  width: 80%;
+  font-size: 18px;
+}
+
+.content1{
+  width: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 2%;
+  margin-bottom:5%;
+  font-size: 18px;
+  padding:2%;
+}
+
+.command-1{
+  width: 100%;
+  margin-left: 0;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.map-selection{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-top: 2%;
+  padding: 0;
+}
+
+.leaflet{
+  display: flex;
+  margin-right: 5%;
+  margin-left: 0;
+  margin-top:1.5%;
+  padding: 0;
+  width: 60vh;
+}
+
+.selection{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 40vh;
+}
+
+
+.selection-ideb{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: #F8C301;
+}
+
+.selection-ideb-title{
+  padding: 1%;
+  font-weight: 900;
+  font-size: 36px;
+}
+
+.selection-ideb-subtitle{
+  font-size: 20px;
+}
+
+.selection-ideb-value{
+  padding: 1%;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.ideb-time{
+  display:flex;
+  width: 80%;
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
+}
+
+.ideb-time-case{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content2{
+  width: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 5%;
+  margin-bottom:5%;
+  font-size: 18px;
+  padding:2%;
+}
+
+.content3{
+  width: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 5%;
+  margin-bottom:5%;
+  font-size: 18px;
+  padding: 2%;
+  line-height: 1.6;
+}
+
+
+
+[data-tab-info] {
+  display: none;
+}
+
+
+.active[data-tab-info] {
+  display: block;
+}
+
+.tab-content {
+  display: flex;
+  background-color: #F9FAFB;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auxiliary{
+  display: flex;
+  background-color: #F9FAFB;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download{
+  margin-top: 3%;
+  width: 80%;
+  font-size: 18px;
+  text-align: center;
+}
+
+.chamada{
+  margin-top: 3%;
+  width: 80%;
+  font-size: 18px;
+}
+
+.indicadores-censo{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.ind{
+  width: 40vh;
+  background-color: darkred;
+  padding: 5%;
+  margin: 5%;
+}
+
+@media (max-width: 500px) {
+.presentation{
+  margin-top: 10%;
+}
+
+.chamada{
+  margin-bottom: 10%;
+}
+}

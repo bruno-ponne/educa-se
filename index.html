@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{headContent()}} {{bootstrapLib()}}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style.css" href="www/style.css" />
+    <title>educa-se</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-case">
+          <div class="logo-title">
+            <div class="logo">
+              <span class="material-symbols-outlined"> insights </span>
+            </div>
+            <div class="title">educa-se</div>
+          </div>
+          <div class="subtitle">mais dados, mais educação</div>
+        </div>
+      </div>
+      <div class="intro">
+        <div class="presentation">
+          {{textOutput("intro_text")}}
+        </div>
+        <div class="download">
+          {{downloadButton("downloadData", label = "Baixar publicação completa")}}
+        </div>
+        <div class="chamada">
+          Para começar, selecione seu município, clicando no mapa ou no menu abaixo:
+        </div>
+        <div class="content1">
+          <div class = "command-1">{{textOutput("p")}}</div>
+          <div class="map-selection">
+            <div class="leaflet">{{leafletOutput("ser_map")}}</div>
+            <div class = "selection">
+              <div class="selection-options">
+                {{selectInput( inputId = "Sel_municipio", label = "", choices =
+              sort(municipalities$NO_MUNICIPIO))}}
+              </div>
+              <div class="selection-ideb">
+                <div class="selection-ideb-title">
+                  IDEB 2019<sup>*</sup>
+                </div>
+                <div class="selection-ideb-subtitle">
+                  rede municipal
+                </div>
+                <div class="selection-ideb-value">
+                  {{textOutput("ideb")}}
+                </div>
+                <div class="selection-ideb-note">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ideb-time-case">
+            <div class="ideb-time">
+              {{plotlyOutput("ideb_time")}}
+            </div>
+          </div>
+        </div>
+        <div class= "content2">
+          <div class="indicadores-censo">
+            <div class="ind">Indicador 1</div>
+            <div class="ind">Indicador 2</div>
+            <div class="ind">Indicador 3</div>
+            <div class="ind">Indicador 4</div>
+            <div class="ind">Indicador 5</div>
+            <div class="ind">Indicador 6</div>
+          </div>
+        </div>
+        </div>
+    </div>
+      </div>
+    </div>
+  </body>
+</html>
