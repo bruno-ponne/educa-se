@@ -89,6 +89,12 @@ shinyServer(function(input, output, session) {
     contentType = "application/pdf"
   )
   
+  autoInvalidate <- reactiveTimer(10000)
+  observe({
+    autoInvalidate()
+    cat(".")
+  })
+  
   
   
 })
