@@ -7,7 +7,7 @@ body{
   justify-content: center;
   margin:0;
   padding:0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 500;
 }
 
@@ -100,63 +100,94 @@ body{
 .command-1{
   width: 100%;
   margin-left: 0;
+  margin-bottom: 3%;
   font-size: 30px;
   font-weight: 900;
 }
 
-.map-selection{
+.info{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  margin-top: 2%;
-  padding: 0;
-}
-
-.leaflet{
-  display: flex;
-  margin-right: 5%;
-  margin-left: 0;
-  margin-top:1.5%;
-  padding: 0;
-  width: 60vh;
-}
-
-.selection{
-  display: flex;
-  flex-direction: column;
+  justify-content: left;
   margin: 0;
-  width: 40vh;
+  font-size: 15px;
+  text-align: center;
 }
 
-
-.selection-ideb{
+.info-ideb{
+  background-color: #F8C301;
+  padding: 2%;
+  margin-left: 0;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  width: 25vh;
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   align-items: center;
+}
+
+.info-pop{
   background-color: #F8C301;
+  padding: 2%;
+  margin-left: 0;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  width: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
-
-.selection-ideb-title{
-  padding: 1%;
+.info-idh{
+  background-color: #F8C301;
+  padding: 2%;
+  margin-left: 0;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  width: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.info-pib{
+  background-color: #F8C301;
+  padding: 2%;
+  margin-left: 0;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  width: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#pop, #ideb, #inv, #pib{
+  font-size: 26px;
   font-weight: 900;
-  font-size: 36px;
 }
 
-.selection-ideb-subtitle{
-  font-size: 20px;
+.capita{
+  font-size: 14px;
+}
+.capita2{
+  font-size: 14px;
+  color: #F8C301;
 }
 
-.selection-ideb-value{
-  padding: 1%;
-  font-size: 36px;
-  font-weight: 900;
+.nota{
+  font-size: 12px;
 }
 
 .ideb-time{
   display:flex;
-  width: 80%;
+  width: 100%;
   margin-top: 3%;
   justify-content: center;
   align-items: center;
@@ -164,8 +195,8 @@ body{
 
 .ideb-time-case{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   width: 100%;
 }
 
@@ -220,14 +251,14 @@ body{
 }
 
 .download{
-  margin-top: 3%;
+  margin-top: 2%;
   width: 80%;
   font-size: 18px;
-  text-align: center;
+  text-align: left;
 }
 
 .chamada{
-  margin-top: 3%;
+  margin-top: 2%;
   width: 80%;
   font-size: 18px;
 }
@@ -235,19 +266,41 @@ body{
 .indicadores-censo{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: left;
 }
 
 .ind{
-  width: 40vh;
-  background-color: darkred;
-  padding: 5%;
-  margin: 5%;
+  width: 50vh;
+  background-color: white;
+  padding: 1%;
+  margin: 1%;
 }
+
+.censo-title{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.command-2{
+  padding-left: 1%;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 2%;
+}
+
 
 @media (max-width: 500px) {
 .presentation{
   margin-top: 10%;
+}
+
+.info{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
 .chamada{

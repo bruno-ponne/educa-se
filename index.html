@@ -28,7 +28,7 @@
             </div>
             <div class="title">educa-se</div>
           </div>
-          <div class="subtitle">mais dados, mais educação</div>
+          <div class="subtitle">mais dados. mais educação</div>
         </div>
       </div>
       <div class="intro">
@@ -39,46 +39,109 @@
           {{downloadButton("downloadData", label = "Baixar publicação completa")}}
         </div>
         <div class="chamada">
-          Para começar, selecione seu município, clicando no mapa ou no menu abaixo:
+          Para começar, selecione seu município:{{selectInput( inputId = "Sel_municipio", label = "", choices =
+              sort(municipalities$NO_MUNICIPIO))}}
         </div>
         <div class="content1">
           <div class = "command-1">{{textOutput("p")}}</div>
-          <div class="map-selection">
-            <div class="leaflet"></div>
-            <div class = "selection">
-              <div class="selection-options">
-                {{selectInput( inputId = "Sel_municipio", label = "", choices =
-              sort(municipalities$NO_MUNICIPIO))}}
-              </div>
-              <div class="selection-ideb">
-                <div class="selection-ideb-title">
-                  IDEB 2019<sup>*</sup>
+          <div class="info">
+                <div class="info-ideb">
+                    <span class="material-symbols-outlined">
+                      monitoring
+                    </span>
+                    <p>
+                      Ideb 2021<sup>*</sup>
+                    </p>
+                    <p class="ideb-output">
+                      {{textOutput("ideb")}}
+                    </p>
+                    <p class="capita2">
+                      per capita
+                    </p>
                 </div>
-                <div class="selection-ideb-subtitle">
-                  rede municipal
+                <div class="info-pop">
+                  <span class="material-symbols-outlined">
+                    groups
+                  </span>
+                  <p>
+                    População
+                  </p>
+                  <p class="ideb-output">
+                    {{textOutput("pop")}}
+                  </p>
+                  <p class="capita2">
+                    per capita
+                  </p>
                 </div>
-                <div class="selection-ideb-value">
-                  {{textOutput("ideb")}}
+                <div class="info-idh">
+                  <span class="material-symbols-outlined">
+                    school
+                  </span>
+                  <p>
+                    Gasto em educação
+                  </p>
+                  <p class="ideb-output">
+                    {{textOutput("inv")}}
+                  </p>
+                  <p class="capita">
+                    per capita
+                  </p>
                 </div>
-                <div class="selection-ideb-note">
+                <div class="info-pib">
+                  <span class="material-symbols-outlined">
+                    paid
+                  </span>
+                  <p>
+                    PIB
+                  </p>
+                  <p class="ideb-output">
+                    {{textOutput("pib")}}
+                  </p>
+                  <p class="capita">
+                    per capita
+                  </p>
                 </div>
+            </div>
+            <div class="nota">
+              <p>(*) O Ideb apresentado refere-se à rede municipal, anos iniciais do Ensino Fundamental. Para os municípios que não tiveram o Ideb de 2021 divulgado, apresenta-se o último índice disponível. Os dados sobre população, gastos e PIB são referentes a 2019, disponibilizados pelo IPEA</p>
+            </div>
+            <div class="ideb-time-case">
+              <div class="ideb-time">
+                {{plotlyOutput("ideb_time")}}
               </div>
             </div>
-          </div>
-          <div class="ideb-time-case">
-            <div class="ideb-time">
-              {{plotlyOutput("ideb_time")}}
+            <div class="nota">
+              <p> Nota: O Ideb apresentado no gráfico refere-se à rede municipal, Ensino Fundamental, anos iniciais (1º ao 5º) e anos finais (6º ao 9º). A linha tracejada indica que o Ideb não está disponível para aquele período.  </p>
             </div>
           </div>
-        </div>
-        <div class= "content2">
-          <div class="indicadores-censo">
-            <div class="ind">Indicador 1</div>
-            <div class="ind">Indicador 2</div>
-            <div class="ind">Indicador 3</div>
-            <div class="ind">Indicador 4</div>
-            <div class="ind">Indicador 5</div>
-            <div class="ind">Indicador 6</div>
+          <div class= "content2">
+            <div class = "command-2">{{textOutput("mun_censo")}}</div>
+            <div class="indicadores-censo">
+              <div class="ind">
+                <div class="censo-title">Porcentagem de escolas com biblioteca</div>
+                <div class="censo-plot">{{plotlyOutput("censo_01")}}</div>
+              </div>
+              <div class="ind">
+                <div class="censo-title">Porcentagem de escolas com quadras de esporte</div>
+                <div class="censo-plot">{{plotlyOutput("censo_02")}}</div>
+              </div>
+              <div class="ind">
+                <div class="censo-title">Porcentagem de escolas com laboraório de ciências</div>
+                <div class="censo-plot">{{plotlyOutput("censo_03")}}</div>
+              </div>
+              <div class="ind">
+                <div class="censo-title">Porcentagem de escolas com laboratório de informática</div>
+                <div class="censo-plot">{{plotlyOutput("censo_04")}}</div>
+              </div>
+              <div class="ind">
+                <div class="censo-title">Porcentagem de escolas com banheiro PNE</div>
+                <div class="censo-plot">{{plotlyOutput("censo_05")}}</div>
+              </div>
+              <div class="ind">
+                <div class="censo-title">Quantidade média de funcionários</div>
+                <div class="censo-plot">{{plotlyOutput("censo_06")}}</div>
+              </div>
+            </div>
           </div>
         </div>
         </div>
