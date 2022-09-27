@@ -7,8 +7,6 @@ library(tidyverse)
 
 # Data
 load("data/dados_municipio.RData")
-load("data/ideb_brasil.RData")
-load("data/ideb_estados.RData")
 load("data/ind_01_library.RData")
 load("data/ind_02_sports_court.RData")
 load("data/ind_03_sci_lab.RData")

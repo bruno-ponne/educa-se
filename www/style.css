@@ -261,6 +261,7 @@ body{
   margin-top: 2%;
   width: 80%;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .indicadores-censo{
@@ -286,6 +287,17 @@ body{
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 2%;
+}
+
+.command-3{
+  padding-left: 1%;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 2%;
+}
+
+.sel{
+  padding-left: 1%;
 }
 
 

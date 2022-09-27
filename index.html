@@ -116,25 +116,26 @@
           </div>
           <div class= "content2">
             <div class = "command-2">{{textOutput("mun_censo")}}</div>
+            <div class = "command-3">Porcentagem de escolas que possuem:</div>
             <div class="indicadores-censo">
               <div class="ind">
-                <div class="censo-title">Porcentagem de escolas com biblioteca</div>
+                <div class="censo-title">Bibliotecas</div>
                 <div class="censo-plot">{{plotlyOutput("censo_01")}}</div>
               </div>
               <div class="ind">
-                <div class="censo-title">Porcentagem de escolas com quadras de esporte</div>
+                <div class="censo-title">Quadras de esporte</div>
                 <div class="censo-plot">{{plotlyOutput("censo_02")}}</div>
               </div>
               <div class="ind">
-                <div class="censo-title">Porcentagem de escolas com laboraório de ciências</div>
+                <div class="censo-title">Laboratório de ciências</div>
                 <div class="censo-plot">{{plotlyOutput("censo_03")}}</div>
               </div>
               <div class="ind">
-                <div class="censo-title">Porcentagem de escolas com laboratório de informática</div>
+                <div class="censo-title">Laboratório de informática</div>
                 <div class="censo-plot">{{plotlyOutput("censo_04")}}</div>
               </div>
               <div class="ind">
-                <div class="censo-title">Porcentagem de escolas com banheiro PNE</div>
+                <div class="censo-title">Banheiro PNE</div>
                 <div class="censo-plot">{{plotlyOutput("censo_05")}}</div>
               </div>
               <div class="ind">
@@ -142,6 +143,29 @@
                 <div class="censo-plot">{{plotlyOutput("censo_06")}}</div>
               </div>
             </div>
+          </div>
+          <div class="content3">
+            <div class = "command-2">Compare seu Ideb</div>
+            <div class = "command-3">Selecione um ou mais municípios e o nível desejado:</div>
+            <div class="sel">
+              {{selectInput(inputId = "Sel_mun_comp",
+              label = "",
+              choices = sort(municipalities$NO_MUNICIPIO), 
+              multiple = TRUE)}}
+            </div>
+            <div class="sel">
+              {{
+                radioButtons(
+                inputId = "etapa",
+                label = "",
+                choiceNames = list("Anos Iniciais do EF", "Anos Finais do EF"),
+                choiceValues = list("anos iniciais", "anos finais"))
+              }}
+            </div>
+            <div class="ideb-time">
+              {{plotlyOutput("compare")}}
+            </div>
+
           </div>
         </div>
         </div>
