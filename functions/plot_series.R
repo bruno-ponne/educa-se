@@ -23,13 +23,13 @@ plot_series <- function(municipality){
                          colors = colors,
                          type = 'scatter', 
                          mode = 'lines', 
-                         line = list(width = 2))%>%
+                         line = list(width = 4))%>%
     add_trace(x = ~ano, 
               y = ~ideb,
               color = ~NIVEL,
               type = 'scatter', 
               mode = 'lines', 
-              line = list(width = 2, dash = "dash"),
+              line = list(width = 4, dash = "dash"),
               connectgaps = TRUE,
               showlegend = FALSE) %>% 
     layout(yaxis = list(title = "Ideb"), 

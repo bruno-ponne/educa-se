@@ -20,12 +20,6 @@ body{
   font-size: 40px;
 }
 
-.logo{
-  display: flex;
-  align-items: start;
-  font-size: 40px;
-  margin-top: 3%;
-}
 
 .title{
   display: flex;
@@ -47,29 +41,24 @@ body{
 .header{
   display: flex;
   background-color: rgb(255, 255, 255);
-  justify-content: center;
+  justify-content: flex-start;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
   position: relative;
   z-index: 10;
   color: #0F3072;
-  padding-bottom: 2%;
 }
 
 .header-case{
-  width: 80%;
-  display: flex;
-  flex-direction: column;
+  margin:0;
+  padding:0;
+  margin-left: 6%;
 }
 
-.logo-title{
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
 
-.subtitle{
-  font-size: 18px;
+img{
+  width: 25%;
+  margin:0;
+  padding:0;
 }
 
 .intro{
@@ -319,3 +308,7 @@ body{
   margin-bottom: 10%;
 }
 }
+
+
+
+

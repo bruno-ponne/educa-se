@@ -19,13 +19,13 @@ compare_plot <- function(etapa,municipios){
                          color = ~NO_MUNICIPIO,
                          type = 'scatter', 
                          mode = 'lines', 
-                         line = list(width = 2))%>%
+                         line = list(width = 4))%>%
     add_trace(x = ~ano, 
               y = ~ideb,
               color = ~NO_MUNICIPIO,
               type = 'scatter', 
               mode = 'lines', 
-              line = list(width = 2, dash = "dash"),
+              line = list(width = 4, dash = "dash"),
               connectgaps = TRUE,
               showlegend = FALSE) %>% 
     layout(yaxis = list(title = "Ideb"), 
