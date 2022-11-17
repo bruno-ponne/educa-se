@@ -1,178 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7B2S5XSFMQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7B2S5XSFMQ');
-    </script>
-    {{headContent()}} {{bootstrapLib()}}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link rel="stylesheet" href="style.css" href="www/style.css" />
-    <title>educa-se</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <div class="header-case">
-            <img src="logo.png" />
-        </div>
-      </div>
-      <div class="intro">
-        <div class="presentation">
-          {{textOutput("intro_text")}}
-        </div>
-        <div class="download">
-          {{downloadButton("downloadData", label = "Baixar publicação completa")}}
-        </div>
-        <div class="chamada">
-          Para começar, selecione seu município:{{selectInput( inputId = "Sel_municipio", label = "", choices =
-              sort(municipalities$NO_MUNICIPIO))}}
-        </div>
-        <div class="content1">
-          <div class = "command-1">{{textOutput("p")}}</div>
-          <div class="info">
-                <div class="info-ideb">
-                    <span class="material-symbols-outlined">
-                      monitoring
-                    </span>
-                    <p>
-                      Ideb 2021<sup>*</sup>
-                    </p>
-                    <p class="ideb-output">
-                      {{textOutput("ideb")}}
-                    </p>
-                    <p class="capita2">
-                      per capita
-                    </p>
-                </div>
-                <div class="info-pop">
-                  <span class="material-symbols-outlined">
-                    groups
-                  </span>
-                  <p>
-                    População
-                  </p>
-                  <p class="ideb-output">
-                    {{textOutput("pop")}}
-                  </p>
-                  <p class="capita2">
-                    per capita
-                  </p>
-                </div>
-                <div class="info-idh">
-                  <span class="material-symbols-outlined">
-                    school
-                  </span>
-                  <p>
-                    Gasto em educação
-                  </p>
-                  <p class="ideb-output">
-                    {{textOutput("inv")}}
-                  </p>
-                  <p class="capita">
-                    per capita
-                  </p>
-                </div>
-                <div class="info-pib">
-                  <span class="material-symbols-outlined">
-                    paid
-                  </span>
-                  <p>
-                    PIB
-                  </p>
-                  <p class="ideb-output">
-                    {{textOutput("pib")}}
-                  </p>
-                  <p class="capita">
-                    per capita
-                  </p>
-                </div>
-            </div>
-            <div class="nota">
-              <p>(*) O Ideb apresentado refere-se à rede municipal, anos iniciais do Ensino Fundamental. Para os municípios que não tiveram o Ideb de 2021 divulgado, apresenta-se o último índice disponível. Os dados sobre população, gastos e PIB são referentes a 2019, disponibilizados pelo IPEA</p>
-            </div>
-            <div class="ideb-time-case">
-              <div class="ideb-time">
-                {{plotlyOutput("ideb_time")}}
-              </div>
-            </div>
-            <div class="nota">
-              <p> Nota: O Ideb apresentado no gráfico refere-se à rede municipal, Ensino Fundamental, anos iniciais (1º ao 5º) e anos finais (6º ao 9º). A linha tracejada indica que o Ideb não está disponível para aquele período.  </p>
-            </div>
-          </div>
-          <div class= "content2">
-            <div class = "command-2">{{textOutput("mun_censo")}}</div>
-            <div class = "command-3">Porcentagem de escolas que possuem:</div>
-            <div class="indicadores-censo">
-              <div class="ind">
-                <div class="censo-title">Bibliotecas</div>
-                <div class="censo-plot">{{plotlyOutput("censo_01")}}</div>
-              </div>
-              <div class="ind">
-                <div class="censo-title">Quadras de esporte</div>
-                <div class="censo-plot">{{plotlyOutput("censo_02")}}</div>
-              </div>
-              <div class="ind">
-                <div class="censo-title">Laboratório de ciências</div>
-                <div class="censo-plot">{{plotlyOutput("censo_03")}}</div>
-              </div>
-              <div class="ind">
-                <div class="censo-title">Laboratório de informática</div>
-                <div class="censo-plot">{{plotlyOutput("censo_04")}}</div>
-              </div>
-              <div class="ind">
-                <div class="censo-title">Banheiro PNE</div>
-                <div class="censo-plot">{{plotlyOutput("censo_05")}}</div>
-              </div>
-              <div class="ind">
-                <div class="censo-title">Quantidade média de funcionários</div>
-                <div class="censo-plot">{{plotlyOutput("censo_06")}}</div>
-              </div>
-            </div>
-          </div>
-          <div class="content3">
-            <div class = "command-2">Compare seu Ideb</div>
-            <div class = "command-3">Selecione um ou mais municípios e o nível desejado:</div>
-            <div class="sel">
-              {{selectInput(inputId = "Sel_mun_comp",
-              label = "",
-              choices = sort(municipalities$NO_MUNICIPIO), 
-              multiple = TRUE)}}
-            </div>
-            <div class="sel">
-              {{
-                radioButtons(
-                inputId = "etapa",
-                label = "",
-                choiceNames = list("Anos Iniciais do EF", "Anos Finais do EF"),
-                choiceValues = list("anos iniciais", "anos finais"))
-              }}
-            </div>
-            <div class="ideb-time">
-              {{plotlyOutput("compare")}}
-            </div>
 
-          </div>
-        </div>
-        </div>
-    </div>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7B2S5XSFMQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-7B2S5XSFMQ');
+  </script>
+  {{headContent()}} {{bootstrapLib()}}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="style.css" href="www/style.css" />
+  <title>educa-se: mais dados para mais educação.</title>
+    <meta name="description" content="O Educa Sergipe fornece dados sobre a educação
+    municipal de Sergipe. Oferece também recomendações para melhoria de indicadores educacionais.">
+</head>
+
+<body>
+  <div class="container">
+    <div id = "link-home" class="header">
+      <img class="img-logo" src="logo.png" />
+      <div class="menu-box">
+        <a class = "menu" href="#link-home">Home</a>
+        <a class = "menu" href="#link-download">Download</a>
+        <a class = "menu" href="#link-chamada">Seu município</a>
+        <a class = "menu" href="#link-ref">Referências</a>
       </div>
     </div>
-  </body>
+    <div class="presentation">
+      <div class="presentation-text">
+        <div class="presentation-text-title">Bem-vindas e bem-vindos ao <span class="educa-se">educa-se</span>!</div>
+        <div class="presentation-text-main">{{textOutput("intro_text")}}</div>
+      </div>
+      <div class="presentation-img-case">
+        <img class="presentation-img" src="image_intro.png"/>
+      </div>
+    </div>
+    <div id = "link-download" class="download">
+      <div class="download-img">
+        <img class="img-book" src="book.png"/>
+      </div>
+      <div class="download-text">
+        Faça o download do "Panorama Educacional dos Municípios Sergipanos" e tenha acesso a recomendações e aos dados
+        do seu município.
+      </div>
+      <div class="download-button">
+        {{downloadButton("downloadData", label = "Baixar publicação completa")}}
+      </div>
+    </div>
+    <div id = "link-chamada" class="chamada">
+      <div class="chamada-text">
+        Para começar, selecione seu município:
+      </div>
+      <div class="chamada-botao">
+        {{selectInput(inputId = "Sel_municipio", label = "", width = "100%", choices =
+        sort(municipalities$NO_MUNICIPIO))}}
+      </div>
+    </div>
+    <div class="content1">
+      <div class="command-1">{{textOutput("p")}}</div>
+      <div class="info">
+
+        <div class="info-box">
+          <div class="info-yellow-box">
+            <img class="img-info" src="ideb.png"/>
+            <div class="img-info-label">Ideb 2021<sup>*</sup></div>
+          </div>
+          <div class="info-ideb-data">
+              {{textOutput("ideb")}}
+          </div>
+        </div>
+
+
+        <div class="info-box">
+          <div class="info-yellow-box">
+            <img class="img-info" src="populacao.png"/>
+            <div class="img-info-label">População</div>
+          </div>
+          <div class="info-pop-data">
+            {{textOutput("pop")}}
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-yellow-box">
+            <img class="img-info" src="educacao.png"/>
+            <div class="img-info-label">Gasto em educação</div>
+          </div>
+          <div class="info-idh-data">
+              {{textOutput("inv")}}
+            <p class="capita">
+              per capita
+            </p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-yellow-box">
+            <img class="img-info" src="pib.png"/>
+            <div class="img-info-label">PIB</div>
+          </div>
+          <div class="info-pib-data">
+              {{textOutput("pib")}}
+            <p class="capita">
+              per capita
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="nota">
+        <p>(*) O Ideb apresentado refere-se à rede municipal, anos iniciais do Ensino Fundamental. Para os municípios
+          que não tiveram o Ideb de 2021 divulgado, apresenta-se o último índice disponível. Os dados sobre população,
+          gastos e PIB são referentes a 2019, disponibilizados pelo IPEA</p>
+      </div>
+    </div>
+    <div class="ideb-time-case">
+      <div class="ideb-time">
+        {{plotlyOutput("ideb_time")}}
+      </div>
+      <div class=ideb-time-img>
+        <img class="img-prof" src="prof.png" />
+      </div>
+    </div>
+    <div class="nota2">
+      <p> Nota: O Ideb apresentado no gráfico refere-se à rede municipal, Ensino Fundamental, anos iniciais (1º ao 5º)
+        e anos finais (6º ao 9º). A linha tracejada indica que o Ideb não está disponível para aquele período. </p>
+    </div>
+    <div class="content2">
+      <div class="command-2">{{textOutput("mun_censo")}}</div>
+      <div class="command-3">Porcentagem de escolas que possuem:</div>
+      <div class="indicadores-censo">
+        <div class="ind">
+          <div class="censo-title">Bibliotecas</div>
+          <div class="censo-plot">{{plotlyOutput("censo_01")}}</div>
+        </div>
+        <div class="ind">
+          <div class="censo-title">Quadras de esporte</div>
+          <div class="censo-plot">{{plotlyOutput("censo_02")}}</div>
+        </div>
+        <div class="ind">
+          <div class="censo-title">Laboratório de ciências</div>
+          <div class="censo-plot">{{plotlyOutput("censo_03")}}</div>
+        </div>
+        <div class="ind">
+          <div class="censo-title">Laboratório de informática</div>
+          <div class="censo-plot">{{plotlyOutput("censo_04")}}</div>
+        </div>
+        <div class="ind">
+          <div class="censo-title">Banheiro PNE</div>
+          <div class="censo-plot">{{plotlyOutput("censo_05")}}</div>
+        </div>
+        <div class="ind">
+          <div class="censo-title">Quantidade média de funcionários</div>
+          <div class="censo-plot">{{plotlyOutput("censo_06")}}</div>
+        </div>
+      </div>
+    </div>
+    <div id = "link-compare" class="content3">
+      <div class="command-2">Compare seu Ideb</div>
+      <div class="command-3">Selecione um ou mais municípios e o nível desejado:</div>
+      <div class="sel-box">
+        <div class="sel">
+          {{selectInput(inputId = "Sel_mun_comp",
+          label = "",
+          choices = sort(municipalities$NO_MUNICIPIO),
+          multiple = TRUE)}}
+        </div>
+        <div class="sel">
+          {{
+          radioButtons(
+          inputId = "etapa",
+          label = "",
+          choiceNames = list("Anos Iniciais do Ensino Fundamental", "Anos Finais do Ensino Fundamental"),
+          choiceValues = list("anos iniciais", "anos finais"))
+          }}
+        </div>
+      </div>
+      <div class="ideb-compare">
+        <div class="ideb-compare-img">
+          <img class="img-prof2" src="prof2.png"/>
+        </div>
+        <div class="ideb-compare-plot">
+          {{plotlyOutput("compare")}}
+        </div>
+      </div>
+      <div class="command-2">Ranking</div>
+      <p class = "ranking-text">Não seria justo comparar o Ideb do seu município com o de um
+        município muito maior ou que tem muito mais recursos que o seu, certo? Por isso separamos os municípios
+        em grupos, de acordo com população e gasto em educação. Veja abaixo em qual grupo o seu município
+        se encontra e qual sua posição. O Ideb é apresentado em parênteses.
+      </p>
+      <div class="ideb-compare">
+          {{plotlyOutput("ranking")}}
+      </div>
+    </div>
+    <div id = "link-ref" class="content4">
+      <div class="command-1">Referências</div>
+      <p class = "ref-intro">Nesta seção oferecemos sugestão de sites e materiais para auxiliá-lo 
+        na formulação de ações para melhoria do aprendizado em seu município.
+        O Brasil conta com um Terceiro Setor que produz pesquisa de qualidade 
+        e atua para a otimização de nossas políticas educacionais. Sinta-se 
+        encorajado a utilizar os materiais abaixo para auxiliar seu trabalho</p>
+      <ul>
+        <li>
+          <a href="https://humane.institutoayrtonsenna.org.br/" target="_blank">Plataforma Humane do Instituto Ayrton Senna.</a>
+          <p>Oferece cursos baseados em evidências para o desenvolvimento e formação integral de educadores. As formações são gratuitas.</p>
+        </li>
+        <li>
+          <a href="https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2021/10/26-10-21-completo-tpe-digital.pdf" target="_blank">
+            Educação Já. Uma estratégia de agenda estratégica para educação básica brasileira. Todos pela Educação.
+          </a>
+          <p>Traz recomendações para o enfrentamento aos efeitos adversos da pandemia de Covid-19 na educação, bem como estratégias sistêmicas para melhoria da educação.</p>
+        </li>
+        <li>
+          <a href="https://www.convivaeducacao.org.br/cursos_ead" target="_blank">
+            Conviva Educação. Undime, Itaú Social, Instituto Natura e outros parceiros
+          </a>
+          <p>Plataforma com cursos e recomendações para o aperfeiçoamento da gestão na educação municipal</p>
+        </li>
+      </ul>
+
+    </div>
+    <div class="content5">
+      © 2022 copyright. Todos os direitos reservados.
+    </div>
+  </div>
+</body>
 </html>

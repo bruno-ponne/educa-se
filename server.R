@@ -9,6 +9,7 @@ library(dplyr)
 source("functions/plot_series.R")
 source("functions/plot_censo.R")
 source("functions/compare_plot.R")
+source("functions/compute_ranking.R")
 
 # Data
 load("data/dados_municipio.RData")
@@ -43,7 +44,9 @@ shinyServer(function(input, output, session) {
     output$censo_04 <- renderPlotly(plot_censo("laboratório de informática", ind_04_computer_lab, input$Sel_municipio, c(0,100)))
     output$censo_05 <- renderPlotly(plot_censo("banheiro PNE", ind_05_handicap_restroom, input$Sel_municipio, c(0,100)))
     output$censo_06 <- renderPlotly(plot_censo("total de funcionários", ind_06_number_employees, input$Sel_municipio, c(0,100)))
-    output$compare  <-  renderPlotly(compare_plot(etapa = input$etapa, municipios = input$Sel_mun_comp))
+    output$compare  <- renderPlotly(compare_plot(etapa = input$etapa, municipios = input$Sel_mun_comp))
+    output$ranking  <-renderPlotly(compute_ranking(input$Sel_municipio))
+    
     updateSelectInput(session, "Sel_mun_comp",
                       selected = input$Sel_municipio)
     

@@ -1,32 +1,14 @@
 *{
   color: #0F3072;
+  line-height: 1.5;
 }
 
 body{
   display: flex;
   justify-content: center;
-  margin:0;
-  padding:0;
-  font-family: 'Helvetica', sans-serif;
-  font-weight: 500;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 200,
-  'opsz' 48;
-  font-size: 40px;
-}
-
-
-.title{
-  display: flex;
-  font-size: 40px;
-  font-weight: 900;
-  margin-top:2%;
-  margin-left: 1%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container{
@@ -35,48 +17,166 @@ body{
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: stretch;
-}
-
-.header{
-  display: flex;
-  background-color: rgb(255, 255, 255);
-  justify-content: flex-start;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-  position: relative;
-  z-index: 10;
-  color: #0F3072;
-}
-
-.header-case{
-  margin:0;
-  padding:0;
-  margin-left: 6.5%;
-}
-
-
-img{
-  width: 20%;
-  margin:0;
-  padding:0;
-}
-
-.intro{
-  display: flex;
-  background-color: #F9FAFB;
-  flex-direction: column;
   align-items: center;
 }
 
+.header{
+  width: 80%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.menu-box{
+  width: 80vh;
+  align-content: center;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: left;
+}
+
+.menu{
+  text-align: left;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 5px solid white;
+  color: #0F3072;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+.menu:hover{
+  text-align: left;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0F3072;
+  text-decoration: none;
+  border-bottom: 5px solid #0F3072;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+
+.img-logo{
+  width: 40vh;
+  margin:0;
+  padding:0;
+}
+
 .presentation{
+  width: 80%;
+  background-color: #EEEDED;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.presentation-text{
+  width: 80vh;
+  padding: 5%;
+}
+
+.presentation-text-title{
+  font-size: 24px;
+  font-weight: 800;
+  color: #43923E
+}
+
+.educa-se{
+  color: #0F3072;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.presentation-text-main{
+  margin-top: 3%;
+  font-size: 16px;
+  margin-right: 5%;
+  text-align: justify;
+}
+
+.presentation-img-case{
+  width: 50vh;
+}
+
+.presentation-img{
+  width: 100%;
+}
+
+.download{
   margin-top: 3%;
   width: 80%;
   font-size: 18px;
+  background-color:  #0F3072;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-img{
+  width: 20vh;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.img-book{
+  width:100%;
+}
+
+.download-text{
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 60vh;
+}
+
+.download-button{
+  width: 30vh;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#downloadData{
+  background-color: #F8C301;
+  color: #0F3072;
+  font-weight: 700;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.chamada{
+  margin-top: 2%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.chamada-text{
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.chamada-botao{
+  font-weight: 800;
+  font-size: 24px;
 }
 
 .content1{
   width: 80%;
-  background-color: white;
+  background-color: #EEEDED;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -86,8 +186,10 @@ img{
   padding:2%;
 }
 
+
 .command-1{
   width: 100%;
+  padding-left: 3%;
   margin-left: 0;
   margin-bottom: 3%;
   font-size: 30px;
@@ -96,67 +198,50 @@ img{
 
 .info{
   width: 100%;
+  padding-left: 3%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: left;
+  justify-content: space-evenly;
   margin: 0;
   font-size: 15px;
   text-align: center;
 }
 
-.info-ideb{
-  background-color: #F8C301;
-  padding: 2%;
-  margin-left: 0;
-  margin-right: 3%;
-  margin-bottom: 3%;
-  width: 25vh;
+.info-box{
+  width: 30vh;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 5%;
 }
 
-.info-pop{
+
+.info-yellow-box{
   background-color: #F8C301;
-  padding: 2%;
+  border-radius: 25px;
+  width: 100%;
+  min-height: 20%;
+  align-content: center;
+  justify-content: baseline;
+  padding: 2% 2% 5% 2%;
   margin-left: 0;
-  margin-right: 3%;
+  margin-right: 2%;
   margin-bottom: 3%;
-  width: 25vh;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
 }
-.info-idh{
-  background-color: #F8C301;
-  padding: 2%;
-  margin-left: 0;
-  margin-right: 3%;
-  margin-bottom: 3%;
-  width: 25vh;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+
+.img-info-label{
+  font-size: 20px;
+  font-weight: 800;
 }
-.info-pib{
-  background-color: #F8C301;
-  padding: 2%;
-  margin-left: 0;
-  margin-right: 3%;
-  margin-bottom: 3%;
-  width: 25vh;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+
+
+.img-info{
+  width: 60%;
 }
+
+
 #pop, #ideb, #inv, #pib{
   font-size: 26px;
   font-weight: 900;
@@ -172,33 +257,54 @@ img{
 
 .nota{
   font-size: 12px;
+  padding-left: 3%;
 }
 
 .ideb-time{
-  display:flex;
-  width: 100%;
-  margin-top: 3%;
-  justify-content: center;
-  align-items: center;
+  width: 80vh;
+}
+
+.ideb-time-img{
+  width: 40vh;
+}
+
+.img-prof{
+  width: 80%;
+}
+ 
+
+.nota2{
+  width: 80%;
+  font-size: 12px;
+  padding-left: 3%;
 }
 
 .ideb-time-case{
   display: flex;
-  justify-content: left;
-  align-items: left;
-  width: 100%;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 80%;
 }
 
 .content2{
   width: 80%;
-  background-color: white;
+  background-color: #EEEDED;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   margin-top: 5%;
-  margin-bottom:5%;
+  margin-bottom:2%;
   font-size: 18px;
-  padding:2%;
+  padding:5%;
+}
+
+#mun_censo{
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 2%;
+  text-align: center;
+  color: #F8C301;
 }
 
 .content3{
@@ -206,12 +312,27 @@ img{
   background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  margin-top: 5%;
-  margin-bottom:5%;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 2%;
   font-size: 18px;
   padding: 2%;
   line-height: 1.6;
+}
+
+.command-2{
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 2%;
+  text-align: center;
+  color: #43923E;
+}
+
+.command-3{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #43923E;
 }
 
 
@@ -239,54 +360,107 @@ img{
   align-items: center;
 }
 
-.download{
-  margin-top: 2%;
-  width: 80%;
-  font-size: 18px;
-  text-align: left;
-}
-
-.chamada{
-  margin-top: 2%;
-  width: 80%;
-  font-size: 18px;
-  font-weight: 700;
-}
-
 .indicadores-censo{
   display: flex;
   flex-flow: row wrap;
-  justify-content: left;
+  justify-content: center;
 }
 
 .ind{
   width: 50vh;
   background-color: white;
+  border-radius: 25px;
   padding: 1%;
-  margin: 1%;
+  margin: 2%;
+  width: 50vh;
 }
 
 .censo-title{
   font-size: 20px;
   font-weight: 900;
+  text-align: center;
 }
 
-.command-2{
-  padding-left: 1%;
-  font-size: 30px;
-  font-weight: 900;
-  margin-bottom: 2%;
+#etapa{
+  width:100%;
 }
 
-.command-3{
-  padding-left: 1%;
-  font-size: 20px;
-  font-weight: 900;
-  margin-bottom: 2%;
+#Sel_mun_comp{
+  color: #0F3072;
+  font-weight: 700;
+}
+
+.sel-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sel{
-  padding-left: 1%;
+  width: 50vh;
+}
+
+.ideb-compare{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: 5%;
+}
+
+.ideb-compare-img{
+  width: 20vh;
+}
+
+.ideb-compare-plot{
+  width: 80vh;
+}
+
+.img-prof2{
+  width: 100%;
+  margin-top: 10%;
+}
+
+.ranking-text{
+  text-align: justify;
+}
+
+.content4{
+  width: 80%;
+  background-color: #EEEDED;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 2%;
+  margin-bottom:5%;
+  font-size: 18px;
+  padding:2%;
+}
+
+.ref-intro{
+  padding-left: 3%;
+  text-align: justify ;
+  padding-bottom: 3%;
+}
+
+ul{
+  margin-left: 3%
+}
+
+.content5{
+  width: 80%;
+  background-color: #0F3072;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  border-radius: 30px;
+  color: white;
+  margin-bottom: 2%;
+  font-size: 18px;
+  padding: 3%;
+  line-height: 1.6;
 }
 
 
@@ -301,7 +475,7 @@ img{
   padding:0;
 }
 
-.header-case{
+.header{
   margin:0;
   padding:0;
   display:flex;
@@ -320,6 +494,93 @@ img{
 .chamada{
   margin-bottom: 10%;
 }
+
+.menu-box{
+  width: 80vh;
+  align-content: center;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.menu{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 5px solid white;
+  color: #0F3072;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 15%;
+  margin-left: 15%;
+
+}
+
+.menu:hover{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F3072;
+  text-decoration: none;
+  border-bottom: 5px solid #0F3072;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.presentation-text-main{
+  text-align: left;
+}
+
+.presentation-text{
+  width: 80vh;
+  padding: 5%;
+  margin: 5%;
+}
+
+.download-text{
+  color: white;
+  padding-left: 10%;
+  width: 60vh;
+}
+
+.download-button{
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+}
+
+#downloadData{
+  background-color: #F8C301;
+  color: #0F3072;
+  font-weight: 500;
+}
+
+.chamada-botao{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.command-1{
+  width: 100%;
+  margin: 5%;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.content4{
+  padding: 5%;
+}
+
+.content5{
+  padding: 10%;
+}
+
 }
 
 
