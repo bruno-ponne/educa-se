@@ -27,7 +27,7 @@ compute_ranking <- function(municipality){
   rank$grupo[rank$cluster == "Grupo 3"] <- "população pequena/gasto alto"
   rank$grupo[rank$cluster == "Grupo 4"] <- "população média/gasto médio"
   
-  colors <- c("#F8C301","#0F3072", "#43923E", "#d73027")
+  colors <- c("#F7C312","#22366B", "#149340", "#d73027")
   
   data <- filter(rank, mun == municipality)
   
@@ -68,7 +68,7 @@ compute_ranking <- function(municipality){
            annotations = a) %>%
     config(modeBarButtons = list(list("toImage")), 
            displaylogo = FALSE, 
-           toImageButtonOptions = list(filename = "gráfico_educase"))
+           toImageButtonOptions = list(filename = "ranking_por_grupo"))
   
   return(p)
 }

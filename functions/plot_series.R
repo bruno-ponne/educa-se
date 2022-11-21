@@ -7,7 +7,9 @@ plot_series <- function(municipality){
   
   data <- filter(ideb_new, NO_MUNICIPIO == municipality)
   
-  colors <- c("#F8C301","#0F3072")
+  colors <- c("#F7C312","#22366B")
+  
+  
   
   t <- list(
     family = "Helvetica",
@@ -43,6 +45,6 @@ plot_series <- function(municipality){
            font = t) %>% 
     config(modeBarButtons = list(list("toImage")), 
            displaylogo = FALSE, 
-           toImageButtonOptions = list(filename = "plotOutput.png"))
+           toImageButtonOptions = list(filename = "ideb"))
   return(series_plot)
 }

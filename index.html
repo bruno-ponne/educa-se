@@ -23,17 +23,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap" rel="stylesheet">
   
     <link rel="stylesheet" href="style.css" href="www/style.css" />
-  <title>educa-se: mais dados para mais educação.</title>
+  <title>educa-se: mais dados, mais educação.</title>
     <meta name="description" content="O Educa Sergipe fornece dados sobre a educação
     municipal de Sergipe. Oferece também recomendações para melhoria de indicadores educacionais.">
 </head>
 
 <body>
   <div class="container">
-    <div id = "link-home" class="header">
+    <div class="header">
       <img class="img-logo" src="logo.png" />
       <div class="menu-box">
-        <a class = "menu" href="#link-home">Home</a>
         <a class = "menu" href="#link-download">Download</a>
         <a class = "menu" href="#link-chamada">Seu município</a>
         <a class = "menu" href="#link-ref">Referências</a>
@@ -123,7 +122,7 @@
       <div class="nota">
         <p>(*) O Ideb apresentado refere-se à rede municipal, anos iniciais do Ensino Fundamental. Para os municípios
           que não tiveram o Ideb de 2021 divulgado, apresenta-se o último índice disponível. Os dados sobre população,
-          gastos e PIB são referentes a 2019, disponibilizados pelo IPEA</p>
+          gastos e PIB são referentes a 2019, disponibilizados pelo IPEA.</p>
       </div>
     </div>
     <div class="ideb-time-case">
@@ -203,7 +202,9 @@
         se encontra e qual sua posição. O Ideb é apresentado em parênteses.
       </p>
       <div class="ideb-compare">
+        <div class="ranking-case">
           {{plotlyOutput("ranking")}}
+        </div>
       </div>
     </div>
     <div id = "link-ref" class="content4">
@@ -236,6 +237,28 @@
     <div class="content5">
       © 2022 copyright. Todos os direitos reservados.
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Voltar ao início">Início</button>
   </div>
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
 </body>
 </html>

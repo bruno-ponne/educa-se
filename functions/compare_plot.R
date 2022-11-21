@@ -39,6 +39,6 @@ compare_plot <- function(etapa,municipios){
            font = t) %>% 
     config(modeBarButtons = list(list("toImage")), 
            displaylogo = FALSE, 
-           toImageButtonOptions = list(filename = "plotOutput.png"))
+           toImageButtonOptions = list(filename = "comparacao_ideb.png"))
   return(compare_plot)
 }

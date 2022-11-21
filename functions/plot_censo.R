@@ -20,7 +20,7 @@ plot_censo <- function(variable, dataset, municipality, yminmax){
                         y = ~yvariable,
                         type = 'scatter', 
                         mode = 'lines', 
-                        line = list(color = "#F8C301", width = 4))%>%
+                        line = list(color = "#F7C312", width = 4))%>%
     layout(yaxis = list(title = ytitle, range = yminmax), 
            xaxis = list(title = xtitle),
            plot_bgcolor = "white",
@@ -28,7 +28,7 @@ plot_censo <- function(variable, dataset, municipality, yminmax){
            font = font_) %>% 
     config(modeBarButtons = list(list("toImage")), 
            displaylogo = FALSE, 
-           toImageButtonOptions = list(filename = "gráfico_educase"))
+           toImageButtonOptions = list(filename = "censo_escolar"))
   
   return(censo_plot)
 }
