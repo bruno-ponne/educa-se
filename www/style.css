@@ -449,9 +449,27 @@ body{
   padding:2%;
 }
 
+.content6{
+  width: 80%;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom:5%;
+  font-size: 18px;
+  padding:2%;
+}
+
+.video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .ref-intro{
   padding-left: 3%;
-  text-align: justify ;
+  text-align: left;
   padding-bottom: 3%;
 }
 
