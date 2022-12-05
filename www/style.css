@@ -285,6 +285,14 @@ body{
   padding-left: 3%;
 }
 
+
+.nota3{
+  width: 80%;
+  font-size: 12px;
+  padding-left: 3%;
+  text-align: center;
+}
+
 .ideb-time-case{
   display: flex;
   flex-flow: wrap;

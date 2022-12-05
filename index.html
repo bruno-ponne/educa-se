@@ -15,16 +15,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Thumbnail image config -->
+  <meta property="og:title" content="Educa Sergipe"/>
+  <meta property="og:image" content="logo.png"/>
+  <meta property="og:description" content="Dados sobre a educação municipal de Sergipe"/>
+  <meta property="og:url" content="www.educa-sergipe.com.br"/>
+  <meta property='og:image:width' content='3508' />
+  <meta property='og:image:height' content='2481' />
+  <meta property="og:type" content='website'/>
+
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap" rel="stylesheet">
-  
-    <link rel="stylesheet" href="style.css" href="www/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" href="www/style.css" />
   <title>educa-se: mais dados, mais educação.</title>
-    <meta name="description" content="O Educa Sergipe fornece dados sobre a educação
+  <meta name="description" content="O Educa Sergipe fornece dados sobre a educação
     municipal de Sergipe. Oferece também recomendações para melhoria de indicadores educacionais.">
 </head>
 
@@ -33,9 +42,9 @@
     <div class="header">
       <img class="img-logo" src="logo.png" />
       <div class="menu-box">
-        <a class = "menu" href="#link-download">Download</a>
-        <a class = "menu" href="#link-chamada">Seu município</a>
-        <a class = "menu" href="#link-ref">Referências</a>
+        <a class="menu" href="#link-download">Download</a>
+        <a class="menu" href="#link-chamada">Seu município</a>
+        <a class="menu" href="#link-ref">Referências</a>
       </div>
     </div>
     <div class="presentation">
@@ -44,12 +53,12 @@
         <div class="presentation-text-main">{{textOutput("intro_text")}}</div>
       </div>
       <div class="presentation-img-case">
-        <img class="presentation-img" src="image_intro.png"/>
+        <img class="presentation-img" src="image_intro.png" />
       </div>
     </div>
-    <div id = "link-download" class="download">
+    <div id="link-download" class="download">
       <div class="download-img">
-        <img class="img-book" src="book.png"/>
+        <img class="img-book" src="book.png" />
       </div>
       <div class="download-text">
         Faça o download do "Panorama Educacional dos Municípios Sergipanos" e tenha acesso a recomendações e aos dados
@@ -59,7 +68,7 @@
         {{downloadButton("downloadData", label = "Baixar publicação completa")}}
       </div>
     </div>
-    <div id = "link-chamada" class="chamada">
+    <div id="link-chamada" class="chamada">
       <div class="chamada-text">
         Para começar, selecione seu município:
       </div>
@@ -74,18 +83,18 @@
 
         <div class="info-box">
           <div class="info-yellow-box">
-            <img class="img-info" src="ideb.png"/>
+            <img class="img-info" src="ideb.png" />
             <div class="img-info-label">Ideb 2021<sup>*</sup></div>
           </div>
           <div class="info-ideb-data">
-              {{textOutput("ideb")}}
+            {{textOutput("ideb")}}
           </div>
         </div>
 
 
         <div class="info-box">
           <div class="info-yellow-box">
-            <img class="img-info" src="populacao.png"/>
+            <img class="img-info" src="populacao.png" />
             <div class="img-info-label">População</div>
           </div>
           <div class="info-pop-data">
@@ -95,11 +104,11 @@
 
         <div class="info-box">
           <div class="info-yellow-box">
-            <img class="img-info" src="educacao.png"/>
+            <img class="img-info" src="educacao.png" />
             <div class="img-info-label">Gasto em educação</div>
           </div>
           <div class="info-idh-data">
-              {{textOutput("inv")}}
+            {{textOutput("inv")}}
             <p class="capita">
               per capita
             </p>
@@ -108,11 +117,11 @@
 
         <div class="info-box">
           <div class="info-yellow-box">
-            <img class="img-info" src="pib.png"/>
+            <img class="img-info" src="pib.png" />
             <div class="img-info-label">PIB</div>
           </div>
           <div class="info-pib-data">
-              {{textOutput("pib")}}
+            {{textOutput("pib")}}
             <p class="capita">
               per capita
             </p>
@@ -167,7 +176,7 @@
         </div>
       </div>
     </div>
-    <div id = "link-compare" class="content3">
+    <div id="link-compare" class="content3">
       <div class="command-2">Compare seu Ideb</div>
       <div class="command-3">Selecione um ou mais municípios e o nível desejado:</div>
       <div class="sel-box">
@@ -189,14 +198,14 @@
       </div>
       <div class="ideb-compare">
         <div class="ideb-compare-img">
-          <img class="img-prof2" src="prof2.png"/>
+          <img class="img-prof2" src="prof2.png" />
         </div>
         <div class="ideb-compare-plot">
           {{plotlyOutput("compare")}}
         </div>
       </div>
       <div class="command-2">Ranking</div>
-      <p class = "ranking-text">Não seria justo comparar o Ideb do seu município com o de um
+      <p class="ranking-text">Não seria justo comparar o Ideb do seu município com o de um
         município muito maior ou que tem muito mais recursos que o seu, certo? Por isso separamos os municípios
         em grupos, de acordo com população e gasto em educação. Veja abaixo em qual grupo o seu município
         se encontra e qual sua posição. O Ideb é apresentado em parênteses.
@@ -206,31 +215,42 @@
           {{plotlyOutput("ranking")}}
         </div>
       </div>
+      <div class="nota3">
+        <p>Nota: Clusters computados por meio do algoritmo estatístico k-means.</p>
+      </div>
     </div>
     <div class="content6">
       <div class="command-1">Vídeo de Lançamento</div>
-      <p class = "ref-intro">Vídeo de divulgação exibido no lançamento do "Panorama Educacional dos Municípios Sergipanos". </p>
+      <p class="ref-intro">Vídeo de divulgação exibido no lançamento do "Panorama Educacional dos Municípios
+        Sergipanos". </p>
       <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/75QxHbLDOTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/75QxHbLDOTI" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
-    <div id = "link-ref" class="content4">
+    <div id="link-ref" class="content4">
       <div class="command-1">Referências</div>
-      <p class = "ref-intro">Nesta seção oferecemos sugestão de sites e materiais para auxiliá-lo 
+      <p class="ref-intro">Nesta seção oferecemos sugestão de sites e materiais para auxiliá-lo
         na formulação de ações para melhoria do aprendizado em seu município.
-        O Brasil conta com um Terceiro Setor que produz pesquisa de qualidade 
-        e atua para a otimização de nossas políticas educacionais. Sinta-se 
+        O Brasil conta com um Terceiro Setor que produz pesquisa de qualidade
+        e atua para a otimização de nossas políticas educacionais. Sinta-se
         encorajado a utilizar os materiais abaixo para auxiliar seu trabalho</p>
       <ul>
         <li>
-          <a href="https://humane.institutoayrtonsenna.org.br/" target="_blank">Plataforma Humane do Instituto Ayrton Senna.</a>
-          <p>Oferece cursos baseados em evidências para o desenvolvimento e formação integral de educadores. As formações são gratuitas.</p>
+          <a href="https://humane.institutoayrtonsenna.org.br/" target="_blank">Plataforma Humane do Instituto Ayrton
+            Senna.</a>
+          <p>Oferece cursos baseados em evidências para o desenvolvimento e formação integral de educadores. As
+            formações são gratuitas.</p>
         </li>
         <li>
-          <a href="https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2021/10/26-10-21-completo-tpe-digital.pdf" target="_blank">
+          <a href="https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2021/10/26-10-21-completo-tpe-digital.pdf"
+            target="_blank">
             Educação Já. Uma proposta de agenda estratégica para educação básica brasileira. Todos pela Educação.
           </a>
-          <p>Traz recomendações para o enfrentamento aos efeitos adversos da pandemia de Covid-19 na educação, bem como estratégias sistêmicas para melhoria da educação.</p>
+          <p>Traz recomendações para o enfrentamento aos efeitos adversos da pandemia de Covid-19 na educação, bem como
+            estratégias sistêmicas para melhoria da educação.</p>
         </li>
         <li>
           <a href="https://www.convivaeducacao.org.br/cursos_ead" target="_blank">
@@ -249,10 +269,10 @@
   <script>
     // Get the button
     let mybutton = document.getElementById("myBtn");
-    
+
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
+    window.onscroll = function () { scrollFunction() };
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
@@ -260,12 +280,13 @@
         mybutton.style.display = "none";
       }
     }
-    
+
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+  </script>
 </body>
+
 </html>
