@@ -482,7 +482,16 @@ body{
 }
 
 ul{
-  margin-left: 3%
+  margin-left: 3%;
+}
+
+.sobre{
+  margin-left: 5%;
+}
+
+.sobre h1{
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .content5{
